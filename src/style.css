@@ -772,3 +772,147 @@ footer {
 .ai-disclaimer { font-size: 11px; color: #8aa1b5; line-height: 1.6; margin: 12px 0 0; }
 @media(max-width:850px) { .ai-kpis { grid-template-columns: 1fr; } }
 @media(max-width:650px) { .ai-message { flex-direction: column; gap: 8px; } }
+
+/* AEGIS-X Voice Control */
+.voice-panel { margin-bottom: 18px; }
+.chip.voice-live { border-color: #7a3546; background: #3e2431; color: #fa8695; }
+.voice-top { display: flex; align-items: stretch; gap: 14px; margin-bottom: 14px; }
+.voice-mic-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 20px;
+  border-radius: 12px;
+  border: 1px solid #2b6869;
+  background: #13393f;
+  color: #6bf0cb;
+  font-weight: 700;
+  font-size: 13px;
+  white-space: nowrap;
+  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.voice-mic-btn:hover { background: #1a4b52; border-color: #4ce4b9; }
+.voice-mic-btn.active {
+  background: #3e2431;
+  border-color: #fa8695;
+  color: #ff9eaa;
+  box-shadow: 0 0 18px rgba(250, 134, 149, 0.25);
+}
+.voice-transcript {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid #263d52;
+  background: #0b1929;
+  border-radius: 12px;
+  padding: 11px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+.voice-transcript span {
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  font-weight: 800;
+  color: #7793a9;
+}
+.voice-transcript strong {
+  font-size: 13px;
+  color: #dff8f2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.voice-feedback {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 14px;
+  border-radius: 10px;
+  font-size: 12px;
+  margin-bottom: 14px;
+}
+.voice-feedback.ok { background: #103a34; border: 1px solid #276f5f; color: #65e8c2; }
+.voice-feedback.warn { background: #3b321e; border: 1px solid #72592d; color: #f7cb77; }
+.voice-feedback.err { background: #3b1d2a; border: 1px solid #7a3546; color: #ff8e9c; }
+.voice-cmd-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.voice-cmd-btn {
+  background: #14283b;
+  border: 1px solid #2a435a;
+  border-radius: 12px;
+  padding: 14px 12px;
+  color: #d6eaf5;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  text-align: left;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.voice-cmd-btn:hover { border-color: #4ce4b9; background: #193845; }
+.voice-cmd-btn strong { font-size: 13px; }
+.voice-cmd-btn small { font-size: 11px; color: #829bb0; }
+.voice-cmd-btn.mint svg { color: #4ce4b9; }
+.voice-cmd-btn.danger { border-color: #5c2a38; background: #261824; }
+.voice-cmd-btn.danger svg { color: #fa8695; }
+.voice-cmd-btn.danger:hover { border-color: #fa8695; background: #3a1f2d; }
+.voice-queue {
+  border: 1px solid #24394d;
+  background: #0b1827;
+  border-radius: 12px;
+  padding: 13px 15px;
+}
+.voice-queue-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.voice-queue-header span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  color: #7c97ad;
+}
+.voice-queue-header small { font-size: 11px; color: #6c859a; }
+.voice-queue-list { display: flex; flex-direction: column; gap: 6px; }
+.voice-queue-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: #102033;
+  font-size: 12px;
+}
+.voice-queue-row b { color: #e6f4fc; font-family: "Space Grotesk", sans-serif; }
+.voice-queue-row small { color: #7e97ab; margin-left: auto; }
+.voice-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.voice-badge.pending { background: #3b321e; color: #f7cb77; }
+.voice-badge.delivered { background: #173d3b; color: #65dfc5; }
+.voice-empty { margin: 4px 0 0; }
+@media(max-width: 900px) { .voice-cmd-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media(max-width: 650px) {
+  .voice-top { flex-direction: column; }
+  .voice-cmd-grid { grid-template-columns: 1fr; }
+}
